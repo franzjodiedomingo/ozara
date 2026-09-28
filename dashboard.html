@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ozara — Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+<header class="topbar">
+  <div class="topbar-brand">
+    <span class="status-dot" id="connDot"></span>
+    <span class="wordmark">OZARA</span>
+  </div>
+  <div class="topbar-right">
+    <span class="user-email" id="userEmail"></span>
+    <button class="logout-btn" id="logoutBtn">Sign out</button>
+  </div>
+</header>
+
+<main class="dashboard-grid">
+
+  <section class="card reading-card">
+    <p class="reading-label">Ozone output</p>
+    <p class="reading-value"><span id="ozoneValue">—</span><span class="reading-unit">ppm</span></p>
+    <p class="reading-status" id="ozoneStatus">Waiting for device...</p>
+  </section>
+
+  <section class="card reading-card">
+    <p class="reading-label">Humidity</p>
+    <p class="reading-value"><span id="humidityValue">—</span><span class="reading-unit">%</span></p>
+    <p class="reading-status">Inside chamber</p>
+  </section>
+
+  <section class="card reading-card">
+    <p class="reading-label">Temperature</p>
+    <p class="reading-value"><span id="temperatureValue">—</span><span class="reading-unit">°C</span></p>
+    <p class="reading-status">Inside chamber</p>
+  </section>
+
+  <section class="card wide-card">
+    <div class="card-header">
+      <p class="card-title">Recent readings</p>
+      <span class="last-updated" id="lastUpdated">No data yet</span>
+    </div>
+    <div class="log-list" id="logList">
+      <p class="log-empty">Waiting for the device to send its first reading...</p>
+    </div>
+  </section>
+
+  <section class="card wide-card">
+    <div class="card-header">
+      <p class="card-title">Alerts</p>
+    </div>
+    <div class="log-list" id="alertList">
+      <p class="log-empty">No alerts. Ozone levels are within the safe range.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
