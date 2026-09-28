@@ -1,0 +1,108 @@
+/* Login page additions — layered on top of style.css (dashboard still uses style.css as is) */
+
+.stage{
+  max-width:400px;
+  grid-template-columns:1fr;
+  grid-template-rows:auto 1fr;
+}
+
+.hero{
+  background:#12a568;
+  color:#fff;
+  text-align:center;
+  padding:36px 24px 46px;
+}
+.logo{
+  width:58px;
+  height:58px;
+  border-radius:15px;
+  background:#0c2a20;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+}
+.logo svg{
+  width:31px;
+  height:31px;
+  fill:none;
+  stroke:var(--ozone);
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.hero-name{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:0.01em;
+}
+.hero-tag{
+  margin:4px 0 0;
+  font-size:11.5px;
+  font-weight:600;
+  opacity:0.92;
+}
+
+.panel{
+  position:relative;
+  margin-top:-20px;
+  border-radius:20px 20px 0 0;
+  background:var(--panel);
+  padding:30px 32px 32px;
+  justify-content:flex-start;
+}
+
+.error{ margin-bottom:14px; }
+.error.ok{
+  color:var(--ozone);
+  background:rgba(94,230,196,0.08);
+  border-color:rgba(94,230,196,0.3);
+}
+
+.pw-wrap{ position:relative; }
+.pw-wrap input{ padding-right:44px; }
+.eye{
+  position:absolute;
+  right:6px;
+  top:50%;
+  transform:translateY(-50%);
+  width:34px;
+  height:34px;
+  border:0;
+  background:transparent;
+  color:var(--mist);
+  cursor:pointer;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+}
+.eye:hover{ color:var(--text); }
+.eye:focus-visible{ outline:2px solid var(--ozone); }
+.eye svg{
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.eye .slash{ display:none; }
+.eye.on .slash{ display:block; }
+
+button.submit:disabled,
+.google-btn:disabled{
+  opacity:0.6;
+  cursor:default;
+}
+
+@media (max-width: 480px){
+  body{ padding:0; align-items:stretch; }
+  .stage{
+    max-width:none;
+    border-radius:0;
+    border:0;
+    min-height:100vh;
+  }
+  .hero{ padding-top:calc(36px + env(safe-area-inset-top, 0px)); }
+}
